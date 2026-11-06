@@ -34,7 +34,7 @@ import java.util.Scanner;
 public class MainActivity extends AppCompatActivity {
 
     private HashMap<String, String> kamusEasy, kamusMedium, kamusDifficult, kamus;
-    private ArrayList<String> kataEasy, kataMedium, kataDifficult, kata;
+    private ArrayList<String> kataEasy, kataMedium, kataDifficult, kata, listSalah;
     int JUMLAH_OPSI=5, JUMLAH_SOAL = 3;
     private RecyclerView rvOpsi;
     private OpsiAdapter adapter;
@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         kataMedium = new ArrayList<>();
         kamusDifficult = new HashMap<>();
         kataDifficult = new ArrayList<>();
+        listSalah = new ArrayList<>();
 
         readFromFile(R.raw.vocab_easy, kamusEasy, kataEasy);
         readFromFile(R.raw.vocab_medium, kamusMedium, kataMedium);
@@ -153,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         soalKe = 0;
         skorBenar = 0;
         skorSalah = 0;
+        listSalah.clear();
         letsPlay();
     }
 
@@ -164,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("JUMLAH_SALAH", skorSalah);
         intent.putExtra("JUMLAH_SOAL", JUMLAH_SOAL);
         intent.putExtra("LEVEL", kodelevel());
+        intent.putStringArrayListExtra("DAFTAR_SALAH", listSalah);
+
         startActivity(intent);
 
         mulaiSesiBaru();
@@ -245,6 +249,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             skorSalah++;
             textHasil.setText("Salah. Jawaban benar: " + benar);
+            listSalah.add(soal+ ": " + benar);
         }
         updateSkor();
     }
