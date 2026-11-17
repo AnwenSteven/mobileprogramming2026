@@ -18,3 +18,4 @@ Aplikasi Vocabulary Game
 
 | Tanggal | Nama | Proses Pengerjaan | Kendala | Rencana Selanjutnya |
 |---|---|---|---|---|
+| | | | | |
