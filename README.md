@@ -12,9 +12,9 @@ Aplikasi Vocabulary Game
 
 **Pembagian Tugas**
 
-Anwen: Riwayat permainan dan jawaban salah
-Khadafi: HistoryActivity
-Luiza: Hapus Riwayat
+- Anwen: Riwayat permainan dan jawaban salah
+- Khadafi: HistoryActivity
+- Luiza: Hapus Riwayat
 
 | Tanggal | Nama | Proses Pengerjaan | Kendala | Rencana Selanjutnya |
 |---|---|---|---|---|
