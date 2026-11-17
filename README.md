@@ -11,8 +11,9 @@ Aplikasi Vocabulary Game
 3. Hapus Riwayat
 
 **Pembagian Tugas**
+
 Anwen: Riwayat permainan dan jawaban salah
-Khadfi: HistoryActivity
+Khadafi: HistoryActivity
 Luiza: Hapus Riwayat
 
 | Tanggal | Nama | Proses Pengerjaan | Kendala | Rencana Selanjutnya |
