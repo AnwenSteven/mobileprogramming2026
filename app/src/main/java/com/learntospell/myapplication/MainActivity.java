@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_LEVEL = "level";
 
     private final Handler handler = new Handler(Looper.getMainLooper());
+    private DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         // pilihLevel(radioGroupLevel.getCheckedRadioButtonId());
 
+        dbHelper = new DatabaseHelper(this);
 
         textHasil = findViewById(R.id.hasil);
         rvOpsi = findViewById(R.id.opsi);
@@ -161,6 +163,9 @@ public class MainActivity extends AppCompatActivity {
     private void selesaiSesi() {
         hentikanTimer();
         sudahDijawab = true;
+
+        dbHelper.simpanSesi(kodelevel(), skorBenar, skorSalah, listSalah);
+
         Intent intent = new Intent(this, RingkasanHasil.class);
         intent.putExtra("JUMLAH_BENAR", skorBenar);
         intent.putExtra("JUMLAH_SALAH", skorSalah);
