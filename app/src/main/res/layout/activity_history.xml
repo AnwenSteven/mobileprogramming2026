@@ -43,12 +43,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
-    
+
     <Button
         android:id="@+id/buttonHapusRiwayat"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hapus riwayat"
+        android:text="Hapus Riwayat"
         app:layout_constraintBottom_toTopOf="@+id/buttonKembali"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,7 @@
         android:id="@+id/buttonKembali"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="kembali"
+        android:text="Kembali"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
