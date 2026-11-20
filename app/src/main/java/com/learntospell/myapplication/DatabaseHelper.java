@@ -93,4 +93,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return sesiId;
     }
+    public void hapusSemuaRiwayat() {
+        SQLiteDatabase db = getWritableDatabase();
+        db.beginTransaction();
+        try {
+            db.delete(TABLE_SALAH, null, null);
+            db.delete(TABLE_SESI, null, null);
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
+        }
+    }
+
+
 }
