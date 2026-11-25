@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "vocab_game.db";
-    private static final int DATABASE_VERSION = 2
+    private static final int DATABASE_VERSION = 2;
     public static final String TABLE_SESI = "tabel_sesi";
     public static final String COL_SESI_ID = "id";
     public static final String COL_SESI_NAMA_PLAYER = "nama_player";

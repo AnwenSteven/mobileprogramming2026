@@ -58,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_DET_DIPILIH = "det_dipilih";
     private static final String KEY_DET_STATUS = "det_status";
 
-    // ---- Bagian dari kode 2 ----
-    private DatabaseHelper dbHelper;                       // (hanya SATU deklarasi)
+    private DatabaseHelper dbHelper;
     private String namaPlayer = "Player";
     private ArrayList<DatabaseHelper.DetailJawaban> listDetailJawaban = new ArrayList<>();
     private long waktuMulaiSesiMs = 0;
