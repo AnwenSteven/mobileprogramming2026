@@ -113,6 +113,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button tombolKembali = findViewById(R.id.btnKembali);
+        tombolKembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hentikanTimer();
+                finish();
+            }
+        });
+
+
         kamus = new HashMap<>();
         kata = new ArrayList<>();
         listSalah = new ArrayList<>();

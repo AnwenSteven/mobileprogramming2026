@@ -53,5 +53,16 @@ public class RingkasanHasil extends AppCompatActivity {
             }
         });
 
+        Button btnMenuUtama = findViewById(R.id.btnMenuUtama);
+        btnMenuUtama.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RingkasanHasil.this, MenuUtamaActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 }
