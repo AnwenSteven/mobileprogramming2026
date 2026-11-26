@@ -56,18 +56,6 @@ public class HistoryActivity extends AppCompatActivity {
         }
     }
 
-    private void tampilkanDialogHapus() {
-        new AlertDialog.Builder(this)
-                .setTitle("Hapus Riwayat")
-                .setMessage("Apakah Anda yakin ingin menghapus seluruh riwayat permainan?")
-                .setPositiveButton("Ya, Hapus", (dialog, which) -> {
-                    dbHelper.hapusSemuaRiwayat();
-                    muatRiwayat();
-                    Toast.makeText(this, "Seluruh riwayat berhasil dihapus!", Toast.LENGTH_SHORT).show();
-                })
-                .setNegativeButton("Batal", null)
-                .show();
-    }
 
     @Override
     protected void onDestroy() {
