@@ -27,3 +27,4 @@ Aplikasi Vocabulary Game
 | 20-11-2026 | Luiza | Menambahkan tombol Hapus Riwayat pada acitivity_history.xml  | Tidak Ada | membuat alert dialog konfirmasi hapus riwayat |
 | 25-11-2026 | Luiza | Menambahkan mainutamaacivity.java dan menambahkan mainactivity  | Tidak Ada | membuat alert dialog konfirmasi hapus riwayat |
 | 26-11-2026 | Luiza | Menambahkan text jumlah soal dan deteik per soal pada pengaturan di mainutamaacivity.java  | Tidak Ada | membuat alert dialog konfirmasi hapus riwayat |
+| 26-11-2026 | Luiza | Menambahkan tambah dialog konfirmasi hapus riwayat  | Tidak Ada | Belum ada |
