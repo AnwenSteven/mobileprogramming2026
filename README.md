@@ -24,4 +24,5 @@ Aplikasi Vocabulary Game
 | 20-11-2026 | Khadafi | Membuat layout activity_History dan item_History                                                                     | Tidak Ada | membuat method pembacaan data di databaseHelper.java |
 | 20-11-2026 | Luiza | Menambahkan hapusSemuaRiwayat pada Database Helper   | Tidak Ada | membuat alert dialog konfirmasi hapus riwayat |
 | 20-11-2026 | Luiza | Menambahkan tombol Hapus Riwayat pada acitivity_history.xml  | Tidak Ada | membuat alert dialog konfirmasi hapus riwayat |
+| 25-11-2026 | Luiza | Menambahkan mainutamaacivity.java dan menambahkan mainactivity  | Tidak Ada | membuat alert dialog konfirmasi hapus riwayat |
 
