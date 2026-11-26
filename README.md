@@ -9,12 +9,13 @@ Aplikasi Vocabulary Game
 1. Riwayat permainan dan jawaban salah
 2. HistoryActivity
 3. Hapus Riwayat
+4. Menu Utama
 
 **Pembagian Tugas**
 
 - Anwen: Riwayat permainan dan jawaban salah
 - Khadafi: HistoryActivity
-- Luiza: Hapus Riwayat
+- Luiza: Hapus Riwayat, Menu Utama
 
 | Tanggal    | Nama | Proses Pengerjaan                                                                | Kendala                                                   | Rencana Selanjutnya                                         |
 |------------|---|----------------------------------------------------------------------------------|-----------------------------------------------------------|-------------------------------------------------------------|
