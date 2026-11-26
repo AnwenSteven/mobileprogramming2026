@@ -119,6 +119,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return sesiId;
     }
 
+
+    public Cursor ambilSemuaSesi() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.query(
+                TABLE_SESI,
+                null,
+                null,
+                null,
+                null,
+                null,
+                COL_SESI_ID + " DESC"
+        );
+    }
+
+    public Cursor ambilDetailSesi(long sesiId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.query(
+                TABLE_DETAIL,
+                null,
+                COL_DETAIL_SESI_ID + " = ?",
+                new String[]{String.valueOf(sesiId)},
+                null,
+                null,
+                COL_DETAIL_ID + " ASC"
+        );
+    }
     public void hapusSemuaRiwayat() {
         SQLiteDatabase db = getWritableDatabase();
         db.beginTransaction();
