@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -91,14 +92,21 @@ public class MenuUtamaActivity extends AppCompatActivity {
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(60, 40, 60, 20);
 
+        TextView labelSoal = new TextView(this);
+        labelSoal.setText("Jumlah Soal");
+        layout.addView(labelSoal);
+
         final EditText inputSoal = new EditText(this);
-        inputSoal.setHint("Jumlah Soal (default: 10)");
         inputSoal.setInputType(InputType.TYPE_CLASS_NUMBER);
         inputSoal.setText(String.valueOf(jumlahSoal));
         layout.addView(inputSoal);
 
+        TextView labelDetik = new TextView(this);
+        labelDetik.setText("Detik Per Soal");
+        labelDetik.setPadding(0, 30, 0, 0);
+        layout.addView(labelDetik);
+
         final EditText inputDetik = new EditText(this);
-        inputDetik.setHint("Detik Per Soal (default: 15)");
         inputDetik.setInputType(InputType.TYPE_CLASS_NUMBER);
         inputDetik.setText(String.valueOf(detikPerSoal));
         layout.addView(inputDetik);
