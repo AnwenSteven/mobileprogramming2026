@@ -29,3 +29,7 @@ Aplikasi Vocabulary Game
 | 26-11-2026 | Luiza | Menambahkan text jumlah soal dan deteik per soal pada pengaturan di mainutamaacivity.java | Tidak Ada                                                 | membuat alert dialog konfirmasi hapus riwayat                          |
 | 26-11-2026 | Luiza | Menambahkan tambah dialog konfirmasi hapus riwayat                                        | Tidak Ada                                                 | Belum ada                                                              |
 | 26-11-2026 | Anwen | Membuat tombol kembali / main menu pada MainActivity dan Ringkasan Hasil                  | Belum ada                                                 | Membantu tugas teman-teman dengan hal kecil seperti tombol kembali ini |
+| 26-11-2026 | Khadafi | Menambahkan method pembacaan data pada DatabaseHelper.java, push fitur HistoryActivity.java     | Tidak Ada                                                 | Membuat isi HistoryAdapter.java
+| 27-11-2026 | Khadafi | Menambahkan isi HistoryAdapter.java     | Masih ada error di HistoryViewHolder, jadi pushnya tertunda                                                 | Tidak Ada
+
+
