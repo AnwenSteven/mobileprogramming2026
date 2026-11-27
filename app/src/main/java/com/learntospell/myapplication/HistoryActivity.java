@@ -38,7 +38,7 @@ public class HistoryActivity extends AppCompatActivity {
 
         buttonKembali.setOnClickListener(v -> finish());
 
-        // TUGAS LUIZA (Issue #3)
+        // TUGAS LUIZA (Issue  #3)
         buttonHapusRiwayat.setOnClickListener(v -> tampilkanDialogHapus());
         muatRiwayat();
     }

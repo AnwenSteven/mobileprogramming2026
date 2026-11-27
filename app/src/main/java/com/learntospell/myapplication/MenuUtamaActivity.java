@@ -38,7 +38,6 @@ public class MenuUtamaActivity extends AppCompatActivity {
         btnMulai = findViewById(R.id.btnMulai);
         btnSettings = findViewById(R.id.btnSettings);
         btnHistory = findViewById(R.id.btnHistory);
-        btnReset = findViewById(R.id.btnReset);
 
         // 1. Tombol Mulai Game (Validasi nama & kirim data via Intent)
         btnMulai.setOnClickListener(new View.OnClickListener() {
