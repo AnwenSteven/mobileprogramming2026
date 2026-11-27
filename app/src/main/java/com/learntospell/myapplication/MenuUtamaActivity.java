@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MenuUtamaActivity extends AppCompatActivity {
 
     private EditText etNamaPlayer;
-    private Button btnMulai, btnSettings, btnHistory, btnReset;
+    private Button btnMulai, btnSettings, btnHistory;
     private DatabaseHelper dbHelper;
 
     // Nilai default untuk Pengaturan Game
@@ -75,14 +75,6 @@ public class MenuUtamaActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        // 4. Tombol Reset (Pop-up AlertDialog konfirmasi hapus riwayat)
-        btnReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tampilkanDialogReset();
-            }
-        });
     }
 
     // Method untuk menampilkan AlertDialog Pengaturan
@@ -130,22 +122,6 @@ public class MenuUtamaActivity extends AppCompatActivity {
                         } catch (NumberFormatException e) {
                             Toast.makeText(MenuUtamaActivity.this, "Input tidak valid!", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                })
-                .setNegativeButton("Batal", null)
-                .show();
-    }
-
-    // Method untuk menampilkan AlertDialog Konfirmasi Reset
-    private void tampilkanDialogReset() {
-        new AlertDialog.Builder(this)
-                .setTitle("Konfirmasi Reset")
-                .setMessage("Apakah Anda yakin ingin menghapus seluruh riwayat permainan?")
-                .setPositiveButton("Ya, Hapus", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dbHelper.hapusSemuaRiwayat();
-                        Toast.makeText(MenuUtamaActivity.this, "Seluruh riwayat berhasil dihapus!", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .setNegativeButton("Batal", null)
