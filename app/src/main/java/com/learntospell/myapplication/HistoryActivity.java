@@ -11,9 +11,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 
 public class HistoryActivity extends AppCompatActivity {
-
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private DatabaseHelper dbHelper;
     private HistoryAdapter adapter;
     private RecyclerView rvHistory;
@@ -44,16 +47,20 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     private void muatRiwayat() {
-        Cursor cursor = dbHelper.ambilSemuaSesi();
-        adapter.swapCursor(cursor);
+        executor.execute(() -> {
+            Cursor cursor = dbHelper.ambilSemuaSesi();
+            int jumlah = cursor.getCount();   // dipaksa terbaca di background thread
 
-        if (cursor.getCount() == 0) {
-            textKosong.setVisibility(View.VISIBLE);
-            rvHistory.setVisibility(View.GONE);
-        } else {
-            textKosong.setVisibility(View.GONE);
-            rvHistory.setVisibility(View.VISIBLE);
-        }
+            runOnUiThread(() -> {
+                if (isFinishing() || isDestroyed()) {
+                    cursor.close();
+                    return;
+                }
+                adapter.swapCursor(cursor);
+                textKosong.setVisibility(jumlah == 0 ? View.VISIBLE : View.GONE);
+                rvHistory.setVisibility(jumlah == 0 ? View.GONE : View.VISIBLE);
+            });
+        });
     }
 
     private void tampilkanDialogHapus() {
@@ -61,9 +68,13 @@ public class HistoryActivity extends AppCompatActivity {
                 .setTitle("Hapus Riwayat")
                 .setMessage("Apakah Anda yakin ingin menghapus seluruh riwayat permainan?")
                 .setPositiveButton("Ya, Hapus", (dialog, which) -> {
-                    dbHelper.hapusSemuaRiwayat();
-                    muatRiwayat();
-                    Toast.makeText(this, "Seluruh riwayat berhasil dihapus!", Toast.LENGTH_SHORT).show();
+                    executor.execute(() -> {
+                        dbHelper.hapusSemuaRiwayat();
+                        runOnUiThread(() -> {
+                            muatRiwayat();
+                            Toast.makeText(this, "Seluruh riwayat berhasil dihapus!", Toast.LENGTH_SHORT).show();
+                        });
+                    });
                 })
                 .setNegativeButton("Batal", null)
                 .show();
@@ -73,6 +84,8 @@ public class HistoryActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        executor.shutdown();
+        adapter.swapCursor(null);
         if (dbHelper != null) {
             dbHelper.close();
         }
