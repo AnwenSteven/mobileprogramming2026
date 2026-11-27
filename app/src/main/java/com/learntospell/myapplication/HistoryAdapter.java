@@ -48,7 +48,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
         holder.textHasil.setText(nama + " - Level " + level);
         holder.textSkor.setText("Skor: " + skor + " (Benar: " + benar + ", Salah: " + salah + ")");
-        holder.textWaktu.setText(waktu);
+        holder.textWaktu.setText("Lama Bermain : " + waktu);
     }
 
     @Override
